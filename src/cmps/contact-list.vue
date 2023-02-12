@@ -14,9 +14,6 @@ export default {
       required: true,
     },
   },
-  created() {
-    console.log(this.contacts);
-  },
   methods:{
     removeContact(contactId){
       this.$emit('remove',contactId)

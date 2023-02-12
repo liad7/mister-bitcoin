@@ -3,7 +3,6 @@
 </template>
 
 <script>
-export default {
-
-}
+import { bitcoinService } from "@/services/bitcoin.service.js";
+export default {};
 </script>
