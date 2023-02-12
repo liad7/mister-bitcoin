@@ -9,7 +9,6 @@
 import { contactService } from "@/services/contact.service.js";
 import ContactList from "@/cmps/contact-list.vue";
 import ContactFilter from "@/cmps/contact-filter.vue";
-import { onUpdated } from "@vue/runtime-core";
 
 export default {
   data() {
