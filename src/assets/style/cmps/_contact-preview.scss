@@ -7,9 +7,15 @@
     }
 
     .contact-info{
+        flex-grow: 1;
         display: grid;
         .contact-name{
             font-weight: 900;
+        }
+
+        .btn{
+            width: fit-content;
+            margin-inline-start: auto;
         }
     }
 }

@@ -1,0 +1,19 @@
+.contact-details {
+    flex-grow: 1;
+    display: flex;
+    height: fit-content;
+  
+    img {
+        height: 100px;
+    }
+    .contact-info{
+        display: grid;
+        gap: 10px;
+        height: fit-content;
+        margin: auto 10px;
+
+        .contact-name{
+            font-weight: 900;
+        }
+    }
+}

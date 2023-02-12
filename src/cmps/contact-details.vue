@@ -4,8 +4,11 @@
       src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
       alt=""
     />
-    <span class="contact-name">{{ contact.name }}</span>
-    <span>{{ contact.email }}</span>
+    <section class="contact-info">
+      <span class="contact-name">{{ contact.name }}</span>
+      <span>{{ contact.email }}</span>
+      <span>{{ contact.phone }}</span>
+    </section>
   </section>
 </template>
 

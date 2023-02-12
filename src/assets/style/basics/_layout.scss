@@ -1,15 +1,19 @@
-.main-layout {
-    display: grid;
-    grid-template-columns: 20px 1fr 20px;
-    grid-template-rows: auto 1fr;
+#app {
     max-width: 1280px;
     margin: 0 auto;
     font-weight: normal;
     height: 100vh;
+    overflow-y: hidden;
 
-    main{
+    main {
         height: 90vh;
     }
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: auto 1fr;
 
     >* {
         grid-column: 2;

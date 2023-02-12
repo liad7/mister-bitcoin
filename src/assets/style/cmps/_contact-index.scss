@@ -1,4 +1,9 @@
 .contact-index {
+    display: flex;
     height: 100%;
-    overflow-y: scroll;
+
+    >:first-child {
+        overflow-y: scroll;
+        padding: 0 10px;
+    }
 }

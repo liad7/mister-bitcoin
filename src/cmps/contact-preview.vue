@@ -7,7 +7,7 @@
     <section class="contact-info">
       <span class="contact-name">{{ contact.name }}</span>
       <span>{{ contact.email }}</span>
-      <button @click.stop="onRemoveContact">X</button>
+      <button @click.stop="onRemoveContact" class="btn remove-btn">X</button>
     </section>
   </section>
 </template>

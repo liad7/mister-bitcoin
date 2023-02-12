@@ -1,8 +1,10 @@
 <template>
   <section v-if="contacts" class="contact-index">
-    <ContactFilter @filter="onSetFilterBy" />
-    <ContactList :contacts="contacts" @remove="removeContact" />
-    <ContactDetails v-if="currContact" :contact="currContact"/>
+    <section>
+      <ContactFilter @filter="onSetFilterBy" />
+      <ContactList :contacts="contacts" @remove="removeContact" />
+    </section>
+    <ContactDetails v-if="currContact" :contact="currContact" />
   </section>
 </template>
 
@@ -22,6 +24,15 @@ export default {
   },
   created() {
     this.getContacts();
+  },
+  async updated() {
+    const { contactId } = this.$route.params;
+    if (!contactId) {
+      this.currContact = null;
+    } else if (contactId !== this.currContact?._id) {
+      this.currContact = await contactService.get(contactId);
+      console.log("this.currContact:", this.currContact);
+    }
   },
   methods: {
     async getContacts() {
