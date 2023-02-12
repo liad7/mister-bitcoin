@@ -19,7 +19,7 @@ export default {
   },
   methods:{
     removeContact(contactId){
-      this.$emit('remmove',contactId)
+      this.$emit('remove',contactId)
     }
   },
   components: {

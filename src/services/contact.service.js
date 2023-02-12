@@ -12,13 +12,17 @@ export const contactService = {
     getEmptyContact,
 }
 
-async function query() {
+async function query(filterBy) {
     let contacts = await dbService.query(KEY)
 
     if (!contacts || !contacts.length) {
         contacts = _createDefaultContacts()
         console.log('contacts in:', contacts)
         await dbService.insert(KEY, contacts)
+    }
+    if (filterBy.txt) {
+        const regex = new RegExp(filterBy.txt, 'i')
+        contacts = contacts.filter(contact => regex.test(contact.name))
     }
     return contacts
 }
