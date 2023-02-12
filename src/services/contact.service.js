@@ -4,7 +4,7 @@ import { dbService } from './db.service.js'
 
 const KEY = 'contactDB'
 
-export const carService = {
+export const contactService = {
     query,
     get,
     remove,

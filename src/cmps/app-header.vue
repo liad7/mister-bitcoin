@@ -1,10 +1,10 @@
 <template>
     <header>
-        <h1>Cars</h1>
+        <h1>Contacts</h1>
         <nav>
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/car">Cars</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
+            <!-- <RouterLink to="/">Home</RouterLink> -->
+            <RouterLink to="/contact">Contact</RouterLink>
+            <!-- <RouterLink to="/about">About</RouterLink> -->
         </nav>
     </header>
 </template>

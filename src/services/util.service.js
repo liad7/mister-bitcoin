@@ -5,7 +5,7 @@ export const utilService = {
     getRandomInt,
 }
 
-function _makeId(length = 10) {
+function makeId(length = 10) {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     for (var i = 0; i < length; i++) {
