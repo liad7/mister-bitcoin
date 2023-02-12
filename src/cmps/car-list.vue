@@ -7,6 +7,9 @@
                     <RouterLink :to="`/car/${car._id}`">
                         <button>Details</button>
                     </RouterLink>
+                    <RouterLink :to="`/car/edit/${car._id}`">
+                        <button>Edit</button>
+                    </RouterLink>
                     <button @click="onRemoveCar(car._id)">x</button>
                 </section>
             </li>
