@@ -1,5 +1,5 @@
 <template>
-    <article class="car-preview">
+    <article>
         <h2>{{ car.vendor }}</h2>
         <h2>{{ car.speed }}</h2>
     </article>

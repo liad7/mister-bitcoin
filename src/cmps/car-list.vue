@@ -1,8 +1,11 @@
 <template>
     <section>
         <ul class="car-list">
-            <li v-for="car in cars" :key="car._id">
-                <CarPreview :car="car"/>
+            <li class="car-preview" v-for="car in cars" :key="car._id">
+                <CarPreview :car="car" />
+                <section class="actions">
+                    <button @click="onRemoveCar(car._id)">x</button>
+                </section>
             </li>
         </ul>
     </section>
@@ -16,11 +19,16 @@ export default {
         cars: {
             type: Array,
             required: true,
+        },
+    },
+    methods: {
+        onRemoveCar(carId) {
+            this.$emit('remove', carId)
         }
     },
     components: {
         CarPreview,
-    }
+    },
 }
 </script>
 
