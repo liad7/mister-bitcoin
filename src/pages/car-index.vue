@@ -1,5 +1,6 @@
 <template>
     <CarList @remove="removeCar" v-if="cars" :cars="cars"/>
+    <RouterLink to="/car/edit"><button>Add a Car</button></RouterLink>
 </template>
 
 <script>

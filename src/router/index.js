@@ -20,7 +20,7 @@ const routerOptions = {
             component: CarDetails,
         },
         {
-            path: '/car/edit/:_id',
+            path: '/car/edit/:_id?',
             component: CarEdit,
         },
         {
