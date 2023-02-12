@@ -1,10 +1,10 @@
-// BASE 
-@import 'basics/base';
-@import 'basics/layout';
-
 // SETUP 
 @import 'setup/mixins';
 @import 'setup/variables';
+
+// BASE 
+@import 'basics/base';
+@import 'basics/layout';
 
 // PAGES 
 @import 'cmps/contact-index';
