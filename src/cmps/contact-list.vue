@@ -1,6 +1,6 @@
 <template>
-  <section class="contact-list" v-for="contact in contacts" :key="contact._id">
-  <ContactPreview :contact="contact"/>
+  <section class="contact-list" >
+  <ContactPreview v-for="contact in contacts" :key="contact._id" :contact="contact" @remove="removeContact"/>
   </section>
 </template>
 
@@ -16,6 +16,11 @@ export default {
   },
   created() {
     console.log(this.contacts);
+  },
+  methods:{
+    removeContact(contactId){
+      this.$emit('remmove',contactId)
+    }
   },
   components: {
     ContactPreview,

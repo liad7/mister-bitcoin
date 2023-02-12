@@ -1,0 +1,14 @@
+.contact-preview{
+    display: flex;
+    gap: 10px;
+    img{
+        height: 50px;
+    }
+
+    .contact-info{
+        display: grid;
+        .contact-name{
+            font-weight: 900;
+        }
+    }
+}

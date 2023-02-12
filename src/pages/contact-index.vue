@@ -1,6 +1,6 @@
 <template>
   <section v-if="contacts" class="contact-index">
-    <ContactList :contacts="contacts"/>
+    <ContactList :contacts="contacts" @remove="removeContact" />
   </section>
 </template>
 
@@ -16,7 +16,14 @@ export default {
   },
   async created() {
     this.contacts = await contactService.query();
-    console.log('this.contacts:', this.contacts);
+  },
+  methods: {
+    removeContact(contactId) {
+      await contactService.remove(contactId);
+      this.contacts = this.contacts.filter(
+        (contact) => contact._id !== contactId
+      );
+    },
   },
   components: {
     ContactList,
