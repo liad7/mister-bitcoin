@@ -1,37 +1,26 @@
-<script setup>
-// import { RouterLink, RouterView } from 'vue-router'
+<script>
+import AppHeader from '@/cmps/app-header.vue'
+import AppFooter from '@/cmps/app-footer.vue'
+export default {
+    components: {
+        AppHeader,
+        AppFooter,
+    },
+}
 </script>
 
 <template>
-    <header>
-        <nav>
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/car">Cars</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
-        </nav>
-    </header>
-
-    <RouterView />
+    <AppHeader />
+    <main>
+        <RouterView />
+    </main>
+    <AppFooter />
 </template>
 
 <style scoped>
-header {
-    line-height: 1.5;
-    max-height: 100vh;
+main {
+    min-height: calc(90vh - 4rem);
 }
-
-.logo {
-    display: block;
-    margin: 0 auto 2rem;
-}
-
-nav {
-    width: 100%;
-    font-size: 12px;
-    text-align: center;
-    margin-top: 2rem;
-}
-
 nav a.router-link-exact-active {
     color: var(--color-text);
 }
