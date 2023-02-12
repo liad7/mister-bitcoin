@@ -11,7 +11,7 @@ const routerOptions = {
             component: HomeView,
         },
         {
-            path: '/contact',
+            path: '/contact/:contactId?',
             component: ContactIndex,
         },
     ],
