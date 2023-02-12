@@ -1,11 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
+
 import HomeView from '../pages/HomeView.vue'
 import CarIndex from '../pages/car-index.vue'
 import CarDetails from '../pages/car-details.vue'
 import CarEdit from '../pages/car-edit.vue'
 
 const routerOptions = {
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHashHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: '/',

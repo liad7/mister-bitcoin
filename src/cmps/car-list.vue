@@ -1,6 +1,6 @@
 <template>
     <section>
-        <ul class="car-list">
+        <TransitionGroup name="list" tag="ul" class="car-list">
             <li class="car-preview" v-for="car in cars" :key="car._id">
                 <CarPreview :car="car" />
                 <section class="actions">
@@ -13,7 +13,7 @@
                     <button @click="onRemoveCar(car._id)">x</button>
                 </section>
             </li>
-        </ul>
+        </TransitionGroup>
     </section>
 </template>
 
