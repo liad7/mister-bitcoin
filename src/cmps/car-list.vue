@@ -4,6 +4,9 @@
             <li class="car-preview" v-for="car in cars" :key="car._id">
                 <CarPreview :car="car" />
                 <section class="actions">
+                    <RouterLink :to="`/car/${car._id}`">
+                        <button>Details</button>
+                    </RouterLink>
                     <button @click="onRemoveCar(car._id)">x</button>
                 </section>
             </li>
@@ -24,7 +27,7 @@ export default {
     methods: {
         onRemoveCar(carId) {
             this.$emit('remove', carId)
-        }
+        },
     },
     components: {
         CarPreview,
