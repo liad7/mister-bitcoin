@@ -1,6 +1,6 @@
 <template>
   <section class="contact-list" >
-  <ContactPreview v-for="contact in contacts" :key="contact._id" :contact="contact" @remove="$emit('remove',$event)"/>
+  <ContactPreview v-for="contact in contacts" :key="contact._id" :contact="contact" @remove="$emit('remove',$event)" @select="$emit('select',$event)"/>
   </section>
 </template>
 

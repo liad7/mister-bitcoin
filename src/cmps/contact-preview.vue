@@ -25,7 +25,7 @@ export default {
       this.$emit("remove", this.contact._id);
     },
     onSelectContact() {
-      this.$router.push(`/contact/${this.contact._id}`);
+      this.$emit("select", this.contact);
     },
   },
 };
