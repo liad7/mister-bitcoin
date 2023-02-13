@@ -12,7 +12,7 @@ export default {
 <template>
   <div class="main-layout">
     <AppHeader />
-    <main>
+    <main class="full main-layout">
       <RouterView />
     </main>
     <AppFooter />

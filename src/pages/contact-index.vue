@@ -3,12 +3,12 @@
     <section>
       <ContactFilter @filter="onSetFilterBy" />
       <RouterLink to="/contact/edit"><button class="btn"><i class="fa-solid fa-plus"></i> Create</button></RouterLink>
+    </section>
       <ContactList
         :contacts="contacts"
         @remove="removeContact"
         @select="selectContact"
       />
-    </section>
     <ContactDetails v-if="currContact" :contact="currContact" />
   </section>
 </template>
