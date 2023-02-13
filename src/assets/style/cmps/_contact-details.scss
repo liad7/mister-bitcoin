@@ -1,14 +1,15 @@
 .contact-details {
     display: flex;
     height: fit-content;
-  
+    // height: 100%;
+
     img {
         height: 100px;
     }
     .contact-info{
+        flex-grow: 1;
         display: grid;
         gap: 10px;
-        height: fit-content;
         margin: auto 10px;
 
         .contact-name{
