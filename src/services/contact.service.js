@@ -17,7 +17,6 @@ async function query(filterBy = { txt: '' }) {
 
     if (!contacts || !contacts.length) {
         contacts = _createDefaultContacts()
-        console.log('contacts in:', contacts)
         await dbService.insert(KEY, contacts)
     }
     if (filterBy.txt) {

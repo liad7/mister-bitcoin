@@ -1,7 +1,7 @@
 <template>
   <section v-if="contacts" class="contact-index">
     <section>
-      <!-- <ContactFilter @filter="onSetFilterBy" /> -->
+      <ContactFilter @filter="onSetFilterBy" />
       <ContactList :contacts="contacts" @remove="removeContact" />
     </section>
     <ContactDetails v-if="currContact" :contact="currContact" />
@@ -17,12 +17,11 @@ import ContactDetails from "@/cmps/contact-details.vue";
 export default {
   data() {
     return {
-      filterBy: {},
       currContact: null,
     };
   },
   async created() {
-    this.$store.dispatch({ type: "loadContacts" });
+    this.loadContacts();
   },
   async updated() {
     const { contactId } = this.$route.params;
@@ -33,16 +32,15 @@ export default {
     }
   },
   methods: {
-    async loadContacts() {
-      this.$store.getters.contacts;
+    async loadContacts(filterBy = { txt: "" }) {
+      this.$store.dispatch({ type: "loadContacts",filterBy });
     },
     async removeContact(contactId) {
-      await this.$store.dispatch({type:'removeContact',contactId});
+      await this.$store.dispatch({ type: "removeContact", contactId });
     },
-    // onSetFilterBy(filterBy) {
-    //   this.filterBy = filterBy;
-    //   this.getContacts();
-    // },
+    onSetFilterBy(filterBy) {
+      this.loadContacts(filterBy);
+    },
   },
   computed: {
     contacts() {

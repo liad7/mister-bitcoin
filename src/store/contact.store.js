@@ -32,19 +32,19 @@ export const contactStore = {
         },
     },
     actions: {
-        async loadContacts({ commit }) {
+        async loadContacts({ commit }, { filterBy }) {
             try {
-                const contacts = await contactService.query()
+                const contacts = await contactService.query(filterBy)
                 commit({ type: 'setContacts', contacts })
             } catch (err) {
                 console.log('Cannot load contacts:', err)
                 throw err
             }
         },
-        async removeContact({ commit }, contact) {
-            commit(contact)
+        async removeContact({ commit }, payload) {
+            commit(payload)
             try {
-                await contactService.remove(contact.contactId)
+                await contactService.remove(payload.contactId)
                 commit({ type: 'clearRemoveContact' })
             } catch (err) {
                 commit({ type: 'undoRemoveContact' })
