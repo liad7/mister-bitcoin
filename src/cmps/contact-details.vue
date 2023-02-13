@@ -8,6 +8,7 @@
       <span class="contact-name">{{ contact.name }}</span>
       <span>{{ contact.email }}</span>
       <span>{{ contact.phone }}</span>
+      <RouterLink :to="`/contact/edit/${contact._id}`"><button class="btn">Edit</button></RouterLink>
     </section>
   </section>
 </template>

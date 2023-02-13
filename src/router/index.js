@@ -13,12 +13,12 @@ const routerOptions = {
             component: HomeView,
         },
         {
-            path: '/contact/:contactId?',
-            component: ContactIndex,
-        },
-        {
             path: '/contact/edit/:contactId?',
             component: ContactEdit,
+        },
+        {
+            path: '/contact/:contactId?',
+            component: ContactIndex,
         },
         {
             path: '/stats',

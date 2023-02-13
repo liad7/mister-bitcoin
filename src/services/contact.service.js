@@ -1,6 +1,7 @@
 // 'use strict'
 
 import { dbService } from './db.service.js'
+import { utilService } from './util.service'
 
 const KEY = 'contactDB'
 
@@ -41,8 +42,10 @@ async function save(conatct) {
 
 function getEmptyContact() {
     return {
-        vendor: '',
-        speed: 0,
+        "_id": utilService.makeId(),
+        "name": "",
+        "email": "",
+        "phone": ""
     }
 }
 
