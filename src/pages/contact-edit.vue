@@ -1,10 +1,11 @@
 <template>
-  <section class="contact-edit">
-    <input type="text" v-model="contact.name" />
-    <input type="text" v-model="contact.email" />
-    <input type="text" v-model="contact.phone" />
-    <button @:click="goBack" class="btn">Back</button>
-  </section>
+  <form class="contact-edit" @submit.prevent="save">
+    <input type="text" required v-model="contact.name" />
+    <input type="text" required v-model="contact.email" />
+    <input type="text" required v-model="contact.phone" />
+    <button class="btn">Save</button>
+  </form>
+    <button @:click="this.$router.go(-1)" class="btn">Back</button>
 </template>
 
 <script>
@@ -22,7 +23,7 @@ export default {
     this.contact = await contactService.get(contactId);
   },
   methods: {
-    async goBack() {
+    async save() {
       await this.$store.dispatch({
         type: "saveContact",
         contact: this.contact,

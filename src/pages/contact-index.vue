@@ -2,6 +2,7 @@
   <section v-if="contacts" class="contact-index">
     <section>
       <ContactFilter @filter="onSetFilterBy" />
+      <RouterLink to="/contact/edit"><button class="btn"><i class="fa-solid fa-plus"></i> Create</button></RouterLink>
       <ContactList
         :contacts="contacts"
         @remove="removeContact"

@@ -18,6 +18,8 @@ export const contactStore = {
             state.contacts.splice(idx, 1)
         },
         addContact(state, { contact }) {
+            console.log('state:', state);
+            console.log('contact:', contact);
             state.contacts.push(contact)
         },
         updateContact(state, { contact }) {
@@ -55,6 +57,7 @@ export const contactStore = {
         },
         async saveContact({ commit }, { contact }) {
             const actionType = (contact._id) ? 'updateContact' : 'addContact'
+            console.log('actionType:', actionType);
             try {
                 const savedContact = await contactService.save(contact)
                 commit({ type: actionType, contact: savedContact })

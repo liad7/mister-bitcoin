@@ -42,7 +42,6 @@ async function save(conatct) {
 
 function getEmptyContact() {
     return {
-        "_id": utilService.makeId(),
         "name": "",
         "email": "",
         "phone": ""
