@@ -31,7 +31,6 @@ export default {
       this.currContact = null;
     } else if (contactId !== this.currContact?._id) {
       this.currContact = await contactService.get(contactId);
-      console.log("this.currContact:", this.currContact);
     }
   },
   methods: {
