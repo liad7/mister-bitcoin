@@ -1,17 +1,26 @@
 <template>
-  <!-- <section class="stats-index">stats-index</section> -->
-   <Bar
-    id="my-chart-id"
-    :options="chartOptions"
-    :data="chartData"
-  />
+  <div class="chart-container">
+    <Bar
+      v-if="avgs"
+      id="my-chart-id"
+      :options="chartOptions"
+      :data="getChartData"
+    />
+  </div>
 </template>
 
 <script>
-// import { bitcoinService } from "@/services/bitcoin.service.js";
-// export default {};
+import { bitcoinService } from '../services/bitcoin.service.js'
 import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from 'chart.js'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -20,14 +29,38 @@ export default {
   components: { Bar },
   data() {
     return {
-      chartData: {
-        labels: [ 'January', 'February', 'March' ],
-        datasets: [ { data: [40, 20, 12] } ]
-      },
+      avgs: null,
       chartOptions: {
-        responsive: true
-      }
+        responsive: true,
+      },
     }
-  }
+  },
+  async created() {
+    this.avgs = await bitcoinService.getAvgBlockSize()
+  },
+  computed: {
+    getChartData() {
+      return {
+        labels: this.getDataLabels,
+        datasets: [
+          {
+            label: 'Avarage block size (in MB)',
+            backgroundColor: '#f7931a99',
+            data: this.getDatasetData,
+          },
+        ],
+      }
+    },
+    getDataLabels() {
+      return this.avgs.map((value) => {
+        const date = new Date(value.x * 1000)
+        return `${date.getDate() + 1}.${date.getMonth() + 1}`
+      })
+    },
+    getDatasetData() {
+      return this.avgs.map((value) => value.y)
+    },
+  },
 }
 </script>
+
