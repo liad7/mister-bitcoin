@@ -12,7 +12,7 @@ export const contactService = {
     getEmptyContact,
 }
 
-async function query(filterBy) {
+async function query(filterBy = { txt: '' }) {
     let contacts = await dbService.query(KEY)
 
     if (!contacts || !contacts.length) {

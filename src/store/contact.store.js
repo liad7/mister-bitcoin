@@ -32,7 +32,7 @@ export const contactStore = {
         },
     },
     actions: {
-        async loadContact({ commit }) {
+        async loadContacts({ commit }) {
             try {
                 const contacts = await contactService.query()
                 commit({ type: 'setContacts', contacts })
