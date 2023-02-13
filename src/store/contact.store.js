@@ -3,6 +3,7 @@ import { contactService } from "../services/contact.service.js"
 export const contactStore = {
     state: {
         contacts: null,
+        lastRemovedContact: null,
     },
     getters: {
         contacts({ contacts }) { return contacts },
