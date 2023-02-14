@@ -5,15 +5,32 @@
     grid-template-rows: 50px 1fr;
     gap: 10px;
     padding: 10px 0;
+    color: #fff;
 
-    >:first-child {
+    .search {
         grid-column: 1/-1;
+        display: flex;
+        align-items: center;
+
+        input {
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background-color: $clr3;
+        }
     }
 
-    >*{
+    >* {
         background-color: $clr2;
+        background-color: $clr4;
         border-radius: 20px;
         border-radius: 1em;
-        box-shadow: 0 0 10px 1px #00000020;;
+        box-shadow: 0 0 10px 1px #00000020;
+        ;
+    }
+
+    .sub-txt{
+        color: $clr5;
     }
 }
