@@ -1,6 +1,6 @@
 <template>
   <section v-if="contacts" class="contact-index">
-    <section>
+    <section class="search">
       <ContactFilter @filter="onSetFilterBy" />
       <RouterLink to="/contact/edit"><button class="btn"><i class="fa-solid fa-plus"></i> Create</button></RouterLink>
     </section>
