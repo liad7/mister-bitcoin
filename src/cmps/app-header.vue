@@ -9,15 +9,13 @@
           <RouterLink to="/stats">Stats</RouterLink>
         </nav>
       </section>
-      <section class="login-signup">
-        <LoginSignup
-          v-if="!user"
-          :user="user"
-          @login="onLogin"
-          @signup="onSignup"
-        />
-        <button v-else @click="onLogout" class="btn">Logout</button>
-      </section>
+      <LoginSignup
+        v-if="!user"
+        :user="user"
+        @login="onLogin"
+        @signup="onSignup"
+      />
+      <button v-else @click="onLogout" class="btn">Logout</button>
     </div>
   </header>
 </template>
@@ -26,6 +24,11 @@
 import Logo from "./logo.vue";
 import LoginSignup from "./login-signup.vue";
 export default {
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    },
+  },
   components: {
     Logo,
     LoginSignup,
