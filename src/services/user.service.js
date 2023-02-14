@@ -29,18 +29,19 @@ async function getUser(id) {
 }
 
 async function login(userCred) {
-    const users = await storageService.query(KEY)
+    const users = await dbService.query(KEY)
     const user = users.find(user => user.username === userCred.username)
     // const user = await httpService.post('auth/login', userCred)
     if (user) {
         // socketService.login(user._id)
         return saveLocalUser(user)
     }
+    return Promise.reject()
 }
 
 async function signup(userCred) {
     if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    const user = await storageService.post(KEY, userCred)
+    const user = await dbService.post(KEY, userCred)
     return saveLocalUser(user)
 }
 

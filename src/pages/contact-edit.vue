@@ -1,4 +1,6 @@
 <template>
+<section>
+
   <form class="contact-edit" @submit.prevent="save">
     <input type="text" required v-model="contact.name" />
     <input type="text" required v-model="contact.email" />
@@ -6,6 +8,7 @@
     <button class="btn">Save</button>
   </form>
     <button @:click="this.$router.go(-1)" class="btn">Back</button>
+</section>
 </template>
 
 <script>

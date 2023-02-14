@@ -1,16 +1,18 @@
 <template>
-  <button @click="toggleSignup">{{ isSignup ? "Signup" : "Login" }}</button>
-  <form v-if="isSignup" @submit.prevent="onLogin" class="login-form">
-    <input placeholder="fullname..." required />
-    <input placeholder="name..." required />
-    <input placeholder="password..." required />
-    <button>Enter</button>
-  </form>
-  <form v-if="!isSignup" class="signup-form" @submit.prevent="onSignup">
-    <input v-model="credentials.username" placeholder="name" required />
-    <input v-model="credentials.password" placeholder="password" required />
-    <button>Enter</button>
-  </form>
+    <button @click="toggleSignup" class="btn toggle-btn">
+      {{ isSignup ? "Signup" : "Login" }}
+    </button>
+    <form v-if="isSignup" @submit.prevent="onLogin" class="login-form">
+      <input placeholder="name..." required />
+      <input placeholder="password..." required />
+      <button class="btn">Enter</button>
+    </form>
+    <form v-if="!isSignup" class="signup-form" @submit.prevent="onSignup">
+      <input placeholder="fullname..." required />
+      <input v-model="credentials.username" placeholder="name" required />
+      <input v-model="credentials.password" placeholder="password" required />
+      <button class="btn">Enter</button>
+    </form>
 </template>
 <script>
 import { userService } from "@/services/user.service.js";

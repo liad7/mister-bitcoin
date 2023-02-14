@@ -2,17 +2,15 @@
     margin: 0 auto;
     font-weight: normal;
     height: 100vh;
-    // overflow-y: hidden;
 
     main {
-        // height: 90vh;
         background-color: $clr1;
         background-color: $bgclr;
         background-color: #798089;
         overflow-y: hidden;
 
-        >*{
-        height: 90vh;
+        >* {
+            height: 90vh;
         }
     }
 }

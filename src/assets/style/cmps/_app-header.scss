@@ -21,5 +21,13 @@ header {
             color: #9dafc2;
             margin-inline-start: 1em;
         }
+
+        .btn {
+            padding: 4px 10px;
+        }
+
+        .toggle-btn {
+            background-color: $clr3;
+        }
     }
 }
