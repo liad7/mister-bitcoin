@@ -8,6 +8,11 @@ export const userService = {
     login,
     signup,
     logout,
+    getEmptyCredentials,
+}
+
+function getEmptyCredentials(){
+    return { username: "", password: "", fullname: "" }
 }
 
 async function getUser(id) {

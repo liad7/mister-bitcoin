@@ -14,9 +14,10 @@
 </template>
 <script>
 import { userService } from "@/services/user.service.js";
+
 export default {
   props: ["user"],
-  // emits: ["signup", "login"],
+  emits: ["signup", "login"],
   data() {
     return {
       credentials: {},
@@ -25,16 +26,16 @@ export default {
     };
   },
   async created() {
-    this.credentials = { username: "", password: "", fullname: "" };
+    this.credentials = userService.getEmptyCredentials();
     this.isSignup = this.user ? true : false;
   },
   methods: {
     clearState() {
-      this.credentials = { username: "", password: "", fullname: "" };
+      this.credentials = userService.getEmptyCredentials();
       this.isSignup = false;
     },
     onLogin() {
-      if (!this.credentials.username) return;
+      // if (!this.credentials.username) return;
       this.$emit("login", this.credentials);
       this.clearState();
     },
