@@ -15,10 +15,28 @@ export const userStore = {
     actions: {
         async login({ commit }, { credentials }) {
             try {
-                const user = await contactService.login(credentials)
+                const user = await userService.login(credentials)
                 commit({ type: 'setUser', user })
             } catch (err) {
-                console.log('Cannot load contacts:', err)
+                console.log('Cannot do login:', err)
+                throw err
+            }
+        },
+        async signup({ commit }, { credentials }) {
+            try {
+                const user = await userService.signup(credentials)
+                commit({ type: 'setUser', user })
+            } catch (err) {
+                console.log('Cannot signup:', err)
+                throw err
+            }
+        },
+        async loguot({ commit }) {
+            try {
+                const user = await userService.loguot()
+                commit({ type: 'setUser', user: null })
+            } catch (err) {
+                console.log('Cannot logout:', err)
                 throw err
             }
         },
