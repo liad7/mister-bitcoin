@@ -1,18 +1,20 @@
 .contact-details {
     display: flex;
+    align-items: center;
     height: fit-content;
-    // height: 100%;
 
     img {
         height: 100px;
+        margin-inline-start: 10px;
     }
-    .contact-info{
+
+    .contact-info {
         flex-grow: 1;
         display: grid;
         gap: 10px;
         margin: auto 10px;
 
-        .contact-name{
+        .contact-name {
             font-weight: 900;
         }
     }

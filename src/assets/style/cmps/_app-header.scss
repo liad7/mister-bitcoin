@@ -1,5 +1,5 @@
 header {
-    background-color: lightblue;
+    background-color: $clr4;
 
     .wrapper {
         display: flex;
@@ -9,6 +9,7 @@ header {
         height: 5vh;
 
         a {
+            color: #9dafc2;
             margin-inline-start: 1em;
         }
     }
