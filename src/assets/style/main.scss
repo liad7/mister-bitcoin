@@ -5,10 +5,12 @@
 // BASE 
 @import 'basics/base';
 @import 'basics/layout';
+@import 'basics/buttons';
 
 // PAGES 
-@import 'cmps/contact-index';
-@import 'cmps/contact-edit';
+@import 'pages/home';
+@import 'pages/contact-index';
+@import 'pages/contact-edit';
 
 // CMPS 
 @import 'cmps/app-header';
