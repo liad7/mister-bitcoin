@@ -3,7 +3,7 @@
     <div class="wrapper">
       <h1>Contacts</h1>
       <nav>
-        <!-- <RouterLink to="/">Home</RouterLink> -->
+        <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
         <RouterLink to="/stats">Stats</RouterLink>
         <!-- <RouterLink to="/about">About</RouterLink> -->
