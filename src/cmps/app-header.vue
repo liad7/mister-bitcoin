@@ -10,7 +10,13 @@
         </nav>
       </section>
       <section class="login-signup">
-        <button class="btn">login</button>
+        <LoginSignup
+          v-if="!user"
+          :user="user"
+          @login="onLogin"
+          @signup="onSignup"
+        />
+        <button v-else @click="onLogout" class="btn">Logout</button>
       </section>
     </div>
   </header>
@@ -18,9 +24,11 @@
 
 <script>
 import Logo from "./logo.vue";
+import LoginSignup from "./login-signup.vue";
 export default {
   components: {
     Logo,
+    LoginSignup,
   },
 };
 </script>
