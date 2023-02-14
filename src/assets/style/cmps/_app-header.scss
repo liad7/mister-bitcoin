@@ -5,8 +5,17 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         height: 5vh;
+
+        >:first-child {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100px;
+                height: 80%;
+            }
+        }
 
         a {
             color: #9dafc2;
