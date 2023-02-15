@@ -8,7 +8,7 @@
           ><button class="btn">Get started</button></RouterLink
         >
       </section>
-      <img src="src/assets/images/home-img.webp" alt="" />
+      <img src="@/assets/images/home-img.webp" alt="" />
     </div>
   </section>
 </template>
